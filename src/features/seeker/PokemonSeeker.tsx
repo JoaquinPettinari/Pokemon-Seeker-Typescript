@@ -16,7 +16,7 @@ function PokemonSeeker(props : Props ) {
 
    return (
       <Grid container spacing={4} alignItems="center" justifyContent="center">
-         <Grid item xs={12} sm={5}>
+         <Grid item xs={10} sm={5}>
                <TextField
                   id="pokemon-seracher"
                   label="Search your pokemon"
@@ -25,7 +25,7 @@ function PokemonSeeker(props : Props ) {
                   onChange={onChange}
                />
          </Grid>
-         <Grid item xs={12} sm={5}>
+         <Grid item xs={10} sm={5}>
             <Button onClick={() => onClickSearchPokemon(pokemonSearched)} variant="contained">
                Search Pokemon
             </Button>

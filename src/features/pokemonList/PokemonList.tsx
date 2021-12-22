@@ -27,7 +27,7 @@ const useStyles = makeStyles({
 
 function PokemonList() {
     const pokemonsData = useAppSelector(pokemons);
-    const { data, fetching } = pokemonsData;
+    const { data, fetching, fetchingMorePoke } = pokemonsData;
     const classes = useStyles();
 
     const renderItem = (item: Pokemon, index: number) => {
@@ -54,7 +54,7 @@ function PokemonList() {
     };
 
     return (
-        <Grid container spacing={4} justifyContent="center">
+        <Grid container spacing={4} justifyContent="center" style={{ marginBottom: '40px' }}>
             {fetching ? (
                 <Grid item>
                     <CircularProgress />
@@ -62,6 +62,9 @@ function PokemonList() {
             ) : (
                 data.map(renderItem)
             )}
+            <Grid item>
+                {fetchingMorePoke && <CircularProgress />}
+            </Grid>
         </Grid>
     );
 }

@@ -1,7 +1,7 @@
 import { apiPromise } from '../../utils/utils'
 
 
-export function getAllPokemons(limit:number) {
-  return apiPromise(`pokemon?limit=${limit}&offset=0`, {body: undefined})
+export function getPokemons(offset:number) {
+  return apiPromise(`pokemon?limit=20&offset=${offset}`, {body: undefined})
 }
   
