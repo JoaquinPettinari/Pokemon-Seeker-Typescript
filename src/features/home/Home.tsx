@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { PokemonSeeker } from "../seeker/PokemonSeeker";
 import { fetchBasicPokemons, fetchMorePokemons, pokemons, findPokemonByName } from "./homeSlice";
@@ -10,8 +10,8 @@ function Home() {
   const pokemonsData = useAppSelector(pokemons);
 
   useEffect(() => {
-    resetPokemonList()
-  }, []);
+    dispatch(fetchBasicPokemons());
+  }, [dispatch]);
 
   const onClickSearchPokemon = (pokemon: string) => {
     dispatch(findPokemonByName(pokemon));
